@@ -8,88 +8,99 @@
 
 import Foundation
 class RPSModel {
-    private static var SharedRPSModel:RPSModel{
-        let rps_model=RPSModel()
-        return rps_model
-    }
+    
     enum Choice {
-        case Rock,Paper,Scissor,Lizard,Spock,None
+        case None,Rock,Paper,Scissor
     }
-    private var _p1_choice:Choice = .None
-    var player1choice:Choice{
+    
+    private static var SharedRPSModel:RPSModel{
+        let rpsmodel=RPSModel()
+        return rpsmodel
+    }
+    
+    private var player1Choice:Choice = .None
+    
+    var player1_choice:Choice{
         get{
-            return _p1_choice
+            return player1Choice
         }
         set{
-            _p1_choice=newValue
+            player1Choice=newValue
         }
     }
-    private var _p2_choice:Choice = .None
-    var player2choice:Choice{
+    private var player2Choice:Choice = .None
+    
+    var player2_choice:Choice{
         get{
-            return _p2_choice
+            return player2Choice
         }
         set{
-            _p2_choice=newValue
+            player2Choice=newValue
         }
     }
-    private var _p1_wincount:Int=0
-    var p1_wincount:Int{
+    private var player1WinCount:Int=0
+    
+    var player1_wincount:Int{
         get{
-            return _p1_wincount
+            return player1WinCount
         }
         set{
-            _p1_wincount=newValue
+            player1WinCount=newValue
         }
     }
-    private var _p2_wincount:Int=0
-    var p2_wincount:Int{
+    private var player2WinCount:Int=0
+    
+    var player2_wincount:Int{
         get{
-            return _p2_wincount
+            return player2WinCount
         }
         set{
-            _p2_wincount=newValue
+            player2WinCount=newValue
         }
     }
     
     func reset() {
-        player1choice = .None
-        player2choice = .None
+        player1Choice = .None
+        player2Choice = .None
     }
     private init() {
-        player1choice = .None
-        player2choice = .None
+        player1Choice = .None
+        player2Choice = .None
     }
     func haveResult() -> Bool {
-        return player1choice != .None && player2choice != .None
+        return player1Choice != .None && player2Choice != .None
     }
     func winner() -> String{
         
-        if (player1choice == .Rock && player2choice == .Paper)||(player1choice == .Rock && player1choice == .Spock) || (player1choice == .Paper && player2choice == .Scissor) || (player1choice == .Paper && player1choice == .Lizard) || (player1choice == .Scissor && player2choice == .Rock) || (player1choice == .Scissor && player1choice == .Spock)||(player1choice == .Lizard && player1choice == .Rock) || (player1choice == .Lizard && player1choice == .Scissor) || (player1choice == .Spock && player1choice == .Paper) || (player1choice == .Spock && player1choice == .Lizard){
-            p2_wincount+=1
-            return "player2 wins"
+        if  (player1Choice == .Paper && player2Choice == .Scissor) || (player1Choice == .Scissor && player2Choice == .Rock) || (player1Choice == .Rock && player2Choice == .Paper) {
+            
+            player2WinCount+=1
+            
+            return "Player2 Wins"
             
         }
-        else if player1choice == player2choice
+        else if player1Choice == player2Choice
         {
             return "It's a tie"
         }
         else
         {
-            p1_wincount+=1
-            return "player1 wins"
+            player1WinCount+=1
+            return "Player1 Wins"
             
         }
         
     }
     func choosePlayer1(pick:Choice) {
-        player1choice=pick
+        player1Choice=pick
     }
     func choosePlayer2(pick:Choice) {
-        player2choice=pick
+        player2Choice=pick
     }
+   
     class func sharedrps()->RPSModel
     {
         return SharedRPSModel
     }
+  
 }
