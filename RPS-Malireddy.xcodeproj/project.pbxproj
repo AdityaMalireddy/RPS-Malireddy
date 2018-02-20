@@ -12,6 +12,7 @@
 		493255EF203B9D30009ABBA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493255ED203B9D30009ABBA9 /* Main.storyboard */; };
 		493255F1203B9D30009ABBA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493255F0203B9D30009ABBA9 /* Assets.xcassets */; };
 		493255F4203B9D30009ABBA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493255F2203B9D30009ABBA9 /* LaunchScreen.storyboard */; };
+		493255FC203BA2DA009ABBA9 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493255FB203BA2DA009ABBA9 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		493255F0203B9D30009ABBA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493255F3203B9D30009ABBA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		493255F5203B9D30009ABBA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493255FB203BA2DA009ABBA9 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				493255E9203B9D30009ABBA9 /* AppDelegate.swift */,
 				493255EB203B9D30009ABBA9 /* ViewController.swift */,
 				493255ED203B9D30009ABBA9 /* Main.storyboard */,
+				493255FB203BA2DA009ABBA9 /* ResultsViewController.swift */,
 				493255F0203B9D30009ABBA9 /* Assets.xcassets */,
 				493255F2203B9D30009ABBA9 /* LaunchScreen.storyboard */,
 				493255F5203B9D30009ABBA9 /* Info.plist */,
@@ -138,6 +141,7 @@
 			files = (
 				493255EC203B9D30009ABBA9 /* ViewController.swift in Sources */,
 				493255EA203B9D30009ABBA9 /* AppDelegate.swift in Sources */,
+				493255FC203BA2DA009ABBA9 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
