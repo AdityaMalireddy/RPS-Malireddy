@@ -10,7 +10,7 @@ import Foundation
 class RPSModel {
     
     enum Choice {
-        case None,Rock,Paper,Scissor
+        case None,Rock,Paper,Scissor,Lizard,Spock
     }
     
     private static var SharedRPSModel:RPSModel{
@@ -62,6 +62,8 @@ class RPSModel {
     func reset() {
         player1Choice = .None
         player2Choice = .None
+        player2_wincount = 0
+        player1_wincount = 0    
     }
     private init() {
         player1Choice = .None
@@ -72,7 +74,7 @@ class RPSModel {
     }
     func winner() -> String{
         
-        if  (player1Choice == .Paper && player2Choice == .Scissor) || (player1Choice == .Scissor && player2Choice == .Rock) || (player1Choice == .Rock && player2Choice == .Paper) {
+        if  (player1Choice == .Paper && player2Choice == .Scissor) || (player1Choice == .Paper && player2Choice == .Lizard) || (player1Choice == .Scissor && player2Choice == .Rock) || (player1Choice == .Scissor && player2Choice == .Spock) || (player1Choice == .Rock && player2Choice == .Paper) || (player1Choice == .Rock && player2Choice == .Spock) || (player1Choice == .Lizard && player2Choice == .Scissor) || (player1Choice == .Lizard && player2Choice == .Rock) || (player1Choice == .Spock && player2Choice == .Paper) || (player1Choice == .Spock && player2Choice == .Lizard) {
             
             player2WinCount+=1
             
